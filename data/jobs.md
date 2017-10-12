@@ -4,12 +4,12 @@
 
 Looking for these traits:
 
-*Quiet
-*Upbeat
-*Personable
-*Responsible__
-*Respectable
-*Sleepiness
+- Quiet
+- Upbeat
+- Personable
+- __Responsible__
+- Respectable
+- Sleepiness
 
 
 ######Contact at: 604-555-2525 with subject heading "I am you!"
