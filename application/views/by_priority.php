@@ -10,6 +10,7 @@
         {display_tasks}
         <tr>
             <td>{id}</td>
+            <!-- INSERT the line below -->
             <td><input type='checkbox' name='task{id}'/></td>
             <td>{task}</td>
             <td>{priority}</td>
