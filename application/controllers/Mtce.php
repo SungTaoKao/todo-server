@@ -23,9 +23,11 @@ class Mtce extends Application {
         }
         $this->data['display_tasks'] = $result;
 
+        $role = $this->session->userdata('userrole');
+        $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
+
         // and then pass them on
         $this->data['pagebody'] = 'itemlist';
-        $this->show_page();
         $this->render();
     }
     
@@ -59,12 +61,6 @@ class Mtce extends Application {
             'last' => $lastpage
         );
         return $this->parser->parse('itemnav',$parms,true);
-    }
-
-    function show_page()
-    {
-        $role = $this->session->userdata('userrole');
-        $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
     }
 
 }
