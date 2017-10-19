@@ -46,24 +46,14 @@ class Views extends Application
         return $this->parser->parse('by_priority', $parms, true);
     }
 
+
     function makeCategorizedPanel()
     {
         $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
         return $this->parser->parse('by_category', $parms, true);
     }
-
-
-    // return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
-    function orderByPriority($a, $b)
-    {
-        if ($a->priority > $b->priority)
-            return -1;
-        elseif ($a->priority < $b->priority)
-            return 1;
-        else
-            return 0;
-    }
     
+        
     // complete flagged items
     function complete() {
             // loop over the post fields, looking for flagged tasks
@@ -75,4 +65,17 @@ class Views extends Application
             }
             $this->index();
     }
+    
 }
+
+// return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
+function orderByPriority($a, $b)
+{
+    if ($a->priority > $b->priority)
+        return -1;
+    elseif ($a->priority < $b->priority)
+        return 1;
+    else
+        return 0;
+}
+
