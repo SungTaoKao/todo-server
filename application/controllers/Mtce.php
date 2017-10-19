@@ -12,6 +12,8 @@ class Mtce extends Application {
     // Show a single page of todo items
     private function show_page($tasks)
     {
+        $role = $this->session->userdata('userrole');
+
         $this->data['pagetitle'] = 'TODO List Maintenance';
         // build the task presentation output
         $result = ''; // start with an empty array      
@@ -19,11 +21,15 @@ class Mtce extends Application {
         {
             if (!empty($task->status))
                 $task->status = $this->app->status($task->status);
-            $result .= $this->parser->parse('oneitem', (array) $task, true);
+
+            // INSERT the next three lines. The fourth is already there
+            if ($role == ROLE_OWNER)
+                $result .= $this->parser->parse('oneitemx', (array) $task, true);
+            else
+                $result .= $this->parser->parse('oneitem', (array) $task, true);
         }
         $this->data['display_tasks'] = $result;
 
-        $role = $this->session->userdata('userrole');
         $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
 
         // and then pass them on
@@ -49,8 +55,14 @@ class Mtce extends Application {
             if ($count >= $this->items_per_page) break;
         }
         $this->data['pagination'] = $this->pagenav($num);
+
+        // INSERT next three lines
+        $role = $this->session->userdata('userrole');
+        if ($role == ROLE_OWNER)
+            $this->data['pagination'] .= $this->parser->parse('itemadd',[], true);
         $this->show_page($tasks);
     }
+
     // Build the pagination navbar
     private function pagenav($num) {
         $lastpage = ceil($this->tasks->size() / $this->items_per_page);
