@@ -20,7 +20,14 @@ class Mtce extends Application {
         // and then pass them on
         $this->data['display_tasks'] = $result;
         $this->data['pagebody'] = 'itemlist';
+        $this->show_page();
         $this->render();
+    }
+
+    function show_page()
+    {
+        $role = $this->session->userdata('userrole');
+        $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
     }
 
 }
