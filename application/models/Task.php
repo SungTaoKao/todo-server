@@ -33,7 +33,7 @@ class Task extends Entity{
     
     public function setPriority($value){
         if(is_numeric($value) && $value < 4){
-            $this->priority = $priority;
+            $this->priority = $value;
             return true;
         } else{
             return false;
