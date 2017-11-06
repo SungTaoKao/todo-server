@@ -1,4 +1,7 @@
 <?php
+
+require_once '../system/core/Model.php';
+
 class Entity extends CI_Model {
     
     // If this class has a setProp method, use it, else modify the property directly
