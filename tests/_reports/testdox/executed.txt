@@ -1,0 +1,22 @@
+TaskList
+ [x] Uncompleted task list
+
+Task
+ [x] Set task
+ [x] Set task symbols
+ [x] Set task length 64
+ [x] Set task length 65
+ [x] Set status
+ [x] Set status symbols
+ [x] Set status length 64
+ [x] Set status length 65
+ [x] Set priority
+ [x] Set priority greater than 3
+ [x] Set priority non numeric
+ [x] Set size
+ [x] Set size greater than 3
+ [x] Set size non numeric
+ [x] Set group
+ [x] Set group greater than 4
+ [x] Set group non numeric
+
