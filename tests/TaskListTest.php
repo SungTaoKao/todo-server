@@ -2,6 +2,10 @@
 
 require_once '../application/models/Tasks.php';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 29991299cf8ef56f19a578f05e0096a1bae14b1b
 if (! class_exists('PHPUnit_Framework_TestCase')) {
     class_alias('PHPUnit\Framework\TestCase', 'PHPUnit_Framework_TestCase');
 }

@@ -1,7 +1,5 @@
 <?php
 
-define('BASEPATH', "../system");
-
 require_once '../application/models/Task.php';
 
 if (! class_exists('PHPUnit_Framework_TestCase')) {
@@ -22,22 +20,22 @@ if (! class_exists('PHPUnit_Framework_TestCase')) {
      // -------------------------------------------------------------
      public function testSetTask()
      {
-         $this->assertEquals(true, $this->task.setTask("ABC123"));
+         $this->assertEquals(true, $this->task->setTask("ABC123"));
      }
 
      public function testSetTaskSymbols()
      {
-         $this->assertEquals(false, $this->task.setTask("ABC$"));
+         $this->assertEquals(false, $this->task->setTask("ABC$"));
      }
 
      public function testSetTaskLength64()
      {
-         $this->assertEquals(true, $this->task.setTask("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+         $this->assertEquals(true, $this->task->setTask("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
      }
 
      public function testSetTaskLength65()
      {
-         $this->assertEquals(false, $this->task.setTask("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+         $this->assertEquals(false, $this->task->setTask("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
      }
 
     // -------------------------------------------------------------
@@ -45,22 +43,22 @@ if (! class_exists('PHPUnit_Framework_TestCase')) {
     // -------------------------------------------------------------
      public function testSetStatus()
      {
-         $this->assertEquals(true, $this->task.setStatus("ABC123"));
+         $this->assertEquals(true, $this->task->setStatus("ABC123"));
      }
 
      public function testSetStatusSymbols()
      {
-         $this->assertEquals(false, $this->task.setStatus("ABC$"));
+         $this->assertEquals(false, $this->task->setStatus("ABC$"));
      }
 
      public function testSetStatusLength64()
      {
-         $this->assertEquals(true, $this->task.setStatus("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+         $this->assertEquals(true, $this->task->setStatus("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
      }
 
      public function testSetStatusLength65()
      {
-         $this->assertEquals(false, $this->task.setStatus("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+         $this->assertEquals(false, $this->task->setStatus("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
      }
 
      // -------------------------------------------------------------
@@ -68,17 +66,17 @@ if (! class_exists('PHPUnit_Framework_TestCase')) {
      // -------------------------------------------------------------
      public function testSetPriority()
      {
-         $this->assertEquals(true, $this->task.setPriority(3));
+         $this->assertEquals(true, $this->task->setPriority(3));
      }
 
      public function testSetPriorityGreaterThan3()
      {
-         $this->assertEquals(false, $this->task.setPriority(4));
+         $this->assertEquals(false, $this->task->setPriority(4));
      }
 
      public function testSetPriorityNonNumeric()
      {
-         $this->assertEquals(false, $this->task.setPriority("A"));
+         $this->assertEquals(false, $this->task->setPriority("A"));
      }
 
      // -------------------------------------------------------------
@@ -86,17 +84,17 @@ if (! class_exists('PHPUnit_Framework_TestCase')) {
      // -------------------------------------------------------------
      public function testSetSize()
      {
-         $this->assertEquals(true, $this->task.setSize(3));
+         $this->assertEquals(true, $this->task->setSize(3));
      }
 
      public function testSetSizeGreaterThan3()
      {
-         $this->assertEquals(false, $this->task.setSize(4));
+         $this->assertEquals(false, $this->task->setSize(4));
      }
 
      public function testSetSizeNonNumeric()
      {
-         $this->assertEquals(false, $this->task.setSize("A"));
+         $this->assertEquals(false, $this->task->setSize("A"));
      }
 
      // -------------------------------------------------------------
@@ -104,16 +102,16 @@ if (! class_exists('PHPUnit_Framework_TestCase')) {
      // -------------------------------------------------------------
      public function testSetGroup()
      {
-         $this->assertEquals(true, $this->task.setGroup(4));
+         $this->assertEquals(true, $this->task->setGroup(4));
      }
 
      public function testSetGroupGreaterThan4()
      {
-         $this->assertEquals(false, $this->task.setGroup(5));
+         $this->assertEquals(false, $this->task->setGroup(5));
      }
 
      public function testSetGroupNonNumeric()
      {
-         $this->assertEquals(false, $this->task.setGroup("A"));
+         $this->assertEquals(false, $this->task->setGroup("A"));
      }
  }

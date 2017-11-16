@@ -18,6 +18,9 @@
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
+    <logging>
+        <log type="coverage-text" target="tests/_reports/testdox/coverage-text.txt" showUncoveredFiles="false"/>
+    </logging>
     <filter>
         <whitelist>
             <directory>./system/</directory>

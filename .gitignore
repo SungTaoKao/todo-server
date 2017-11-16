@@ -23,3 +23,6 @@ application/logs/*
 
 # Temp folder
 /tmp/*
+
+#PHPunit
+/tests/_reports/
