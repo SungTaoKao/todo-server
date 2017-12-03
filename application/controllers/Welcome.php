@@ -17,6 +17,8 @@ class Welcome extends Application
 	 * map to /welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	
+	public function index(){
+        $this->load->view('homepage');
+    }
 
 }
