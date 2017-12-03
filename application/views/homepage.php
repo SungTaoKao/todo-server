@@ -1,16 +1,3 @@
-<div class="alert alert-info">{remaining_tasks} tasks are left to do!</div>
-
-<table class="table">
-    <tr>
-        <th>Id</th>
-        <th>Task</th>
-        <th>Priority</th>
-    </tr>
-    {display_tasks}
-    <tr>
-        <td>{id}</td>
-        <td>{task}</td>
-        <td>{priority}</td>
-    </tr>
-    {/display_tasks}
-</table>
+<div class="alert alert-info">
+    <h1>THIS IS A <strong>SERVER</strong> WEB APP </h1>
+</div>
