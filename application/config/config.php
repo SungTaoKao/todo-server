@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-// the menu basics (text navbar)
+/* the menu basics (text navbar)
 $config['menu_choices'] = array(
     'menudata' => array(
         array('name' => 'Home', 'link' => '/'),
@@ -10,7 +10,7 @@ $config['menu_choices'] = array(
         array('name' => 'Help Wanted', 'link' => '/helpme'),
         )
     );
-
+*/
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
