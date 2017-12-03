@@ -30,9 +30,12 @@ class Jobs extends Rest_Controller {
 	}
 
 	// Handle an incoming PUT - crUd
+	// Handle an incoming PUT - update a todo item
 	function index_put($key=null)
 	{
-		$this->response('ok', 200);
+		$record = array_merge(array('id' => $key), $this->_put_args);
+		$this->tasks->update($record);
+		$this->response(array('ok'), 200);
 	}
 
 	// Handle an incoming POST - Crud
@@ -45,8 +48,10 @@ class Jobs extends Rest_Controller {
 	}
 
 	// Handle an incoming DELETE - cruD
+	// Handle an incoming DELETE - delete a todo item
 	function index_delete($key=null)
 	{
-		$this->response('ok', 200);
+		$this->tasks->delete($key);
+		$this->response(array('ok'), 200);
 	}
 }
