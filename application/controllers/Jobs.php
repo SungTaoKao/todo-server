@@ -36,9 +36,12 @@ class Jobs extends Rest_Controller {
 	}
 
 	// Handle an incoming POST - Crud
+	// Handle an incoming POST - add a new todo item
 	function index_post($key=null)
 	{
-		$this->response('ok', 200);
+		$record = array_merge(array('id' => $key), $_POST);
+		$this->tasks->add($record);
+		$this->response(array('ok'), 200);
 	}
 
 	// Handle an incoming DELETE - cruD
